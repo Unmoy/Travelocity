@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import firebaseConfig from "./firebase.config";
 import { useHistory, useLocation } from "react-router";
 import { UserContext } from "../../App";
+import "./Login.css";
 
 const Login = () => {
   const [loggedIn, setLoggedIn] = useContext(UserContext);
@@ -21,10 +22,10 @@ const Login = () => {
     success: false,
   });
 
-  let history = useHistory();
-  let location = useLocation();
+  const history = useHistory();
+  const location = useLocation();
 
-  let { from } = location.state || { from: { pathname: "/" } };
+  const { from } = location.state || { from: { pathname: "/" } };
   const useStyles = makeStyles((theme) => ({
     root: {
       "& .MuiTextField-root": {
@@ -102,6 +103,7 @@ const Login = () => {
           newUser.error = "";
           newUser.success = true;
           setUser(newUser);
+          history.replace(from);
         })
         .catch((error) => {
           const newUser = { ...user };
@@ -132,7 +134,8 @@ const Login = () => {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "10%" }}>
+    <div className="form-layout" style={{}}>
+      {newUser ? <h3>Create an account</h3> : <h3>Login</h3>}
       <form
         onSubmit={handleSubmit}
         className={classes.root}
@@ -179,13 +182,12 @@ const Login = () => {
           type="submit"
           value={newUser ? "Submit" : "Login"}
         />
-        {/* <br /> */}
+
         <button
           style={{ margin: "10px", border: "1px solid black" }}
           name="newUser"
           onClick={() => setNewUser(!newUser)}
         >
-          {" "}
           SignUp
         </button>
         <br />

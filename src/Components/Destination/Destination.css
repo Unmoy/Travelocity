@@ -1,0 +1,46 @@
+.search-form {
+  margin-left: 13%;
+  margin-top: 20px;
+  height: 20%;
+  border: 1px solid black;
+  width: 24%;
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(231, 214, 214);
+}
+.search-btn {
+  background-color: #2e2d88;
+  color: whitesmoke;
+  border-radius: 5px;
+}
+.search-place {
+  display: flex;
+}
+.map-size {
+  margin-left: 20px;
+}
+.search-btn {
+  background-color: #2e2d88;
+  color: whitesmoke;
+  border-radius: 3px;
+  margin: 4px;
+}
+.type-list {
+  color: blue;
+  font-size: 18px;
+  font-weight: 700;
+}
+.type-list img {
+  width: 20%;
+  margin-right: 5%;
+}
+.places {
+  color: blue;
+  font-size: 20px;
+  font-weight: 900;
+}
+@media only screen and (max-width: 320px) {
+  .search-place {
+    display: block;
+  }
+}

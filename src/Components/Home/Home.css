@@ -3,6 +3,12 @@
   grid-template-columns: auto auto auto auto;
   justify-content: center;
   grid-gap: 5px;
-  margin-top: 10%;
+  margin-top:;
   text-align: center;
+}
+.bg-img {
+  background-image: url("https://i.ibb.co/GH7bpVK/5acbe9c5814e4-thumb900.jpg");
+  height: 670px;
+  background-position: center center;
+  background-size: 100% 100%;
 }

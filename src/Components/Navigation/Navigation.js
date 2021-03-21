@@ -1,27 +1,48 @@
 import React from "react";
+import { Navbar } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
-import "./Navigation.css";
 import { Link } from "react-router-dom";
+import "./Navigation.css";
+
 const Navigation = () => {
   return (
     <div>
-      <div className="navs">
-        {/* <h1 style={{ marginLeft: "10px", marginTop: "15px" }}>Travelocity</h1> */}
-        <Nav className="justify-content-end " activeKey="/home">
-          <Nav.Item className="p-2">
-            <Link to="/home">Home</Link>
-          </Nav.Item>
-          <Nav.Item className="p-2">
-            <Link to="/about">About</Link>
-          </Nav.Item>
-          <Nav.Item className="p-2">
-            <Link to="/destination">Destination</Link>
-          </Nav.Item>
-          <Nav.Item className="p-2">
-            <Link to="/login">Login</Link>
-          </Nav.Item>
-        </Nav>
-      </div>
+      <Navbar style={{ backgroundColor: "#914E75" }} expand="lg">
+        <Navbar.Brand
+          style={{
+            marginLeft: "10%",
+            fontSize: "30px",
+            fontWeight: "bold",
+            color: "#2243B6",
+          }}
+          to="/home"
+        >
+          Travelocity
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav style={{ marginLeft: "60%" }} className="mr-auto">
+            <Nav.Link style={{ color: "#00468C" }} href="/home">
+              Home
+            </Nav.Link>
+            <Nav.Link
+              style={{ color: "#00468C", marginLeft: "15px" }}
+              href="/about"
+            >
+              About
+            </Nav.Link>
+            <Nav.Link
+              style={{ color: "#00468C", marginLeft: "15px" }}
+              href="/destination"
+            >
+              Destination
+            </Nav.Link>
+            <Link to="/login">
+              <button className="log-btn">Login </button>
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </div>
   );
 };

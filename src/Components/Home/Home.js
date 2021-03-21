@@ -1,18 +1,21 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 import data from "../Data/data.json";
 import Transport from "../Transport/Transport";
 
 import "./Home.css";
 
 const Home = () => {
-  const vehicles = data;
-  console.log(vehicles);
+  const [vehicles, setVehicles] = useState([]);
+  useEffect(() => {
+    setVehicles(data);
+  }, []);
   return (
-    <div className="transport-options">
-      {vehicles.map((vehicle) => (
-        <Transport onClick={} key={vehicle.id} vehicle={vehicle}></Transport>
-      ))}
+    <div className="bg-img">
+      <div className="transport-options">
+        {vehicles.map((vehicle) => (
+          <Transport key={vehicle.id} vehicle={vehicle}></Transport>
+        ))}
+      </div>
     </div>
   );
 };
