@@ -12,6 +12,7 @@ import NotFound from "./Components/Not Found/NotFound";
 export const UserContext = createContext();
 function App() {
   const [loggedIn, setLoggedIn] = useState({});
+
   return (
     <UserContext.Provider value={[loggedIn, setLoggedIn]} className="App">
       <Router>
@@ -26,13 +27,12 @@ function App() {
           <PrivateRoute path="/about">
             <About></About>
           </PrivateRoute>
-          <Route path="/destination/:key">
+          <PrivateRoute path="/destination/:key">
             <Destination></Destination>
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
-
           <Route path="*">
             <NotFound></NotFound>
           </Route>

@@ -121,6 +121,7 @@ const Login = () => {
           newUser.error = "";
           newUser.success = true;
           setUser(newUser);
+          setLoggedIn(user);
           history.replace(from);
         })
         .catch((error) => {
