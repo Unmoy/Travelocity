@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import { Navbar } from "react-bootstrap";
-import Nav from "react-bootstrap/Nav";
+
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
 import "./Navigation.css";
@@ -9,7 +8,7 @@ const Navigation = () => {
   const [loggedIn, setLoggedIn] = useContext(UserContext);
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light  bg-transparent">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/home">
             Travelocity

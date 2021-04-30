@@ -3,7 +3,6 @@
   grid-template-columns: auto auto auto auto;
   justify-content: center;
   grid-gap: 5px;
-  margin-top:;
   text-align: center;
 }
 .bg-img {
@@ -12,3 +11,9 @@
   background-position: center center;
   background-size: 100% 100%;
 }
+
+/* @media only screen and (min-width: 320px) {
+  .transport-options {
+    display: block;
+  }
+} */

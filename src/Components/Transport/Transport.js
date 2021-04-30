@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "./Transport.css";
 const Transport = (props) => {
   const { url, name, id } = props.vehicle;
   return (
